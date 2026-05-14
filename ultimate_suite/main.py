@@ -1,14 +1,24 @@
+
 import sys
 import os
 import json
-import qtawesome as qta
 
-from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
+# ── QApplication MUST be created before any Qt widgets or qtawesome icons ──
+from PyQt6.QtWidgets import QApplication
+from PyQt6.QtGui import QFont
+if not QApplication.instance():
+    _pre_app = QApplication(sys.argv)
+    _pre_font = QFont("Segoe UI", 10)
+    _pre_app.setFont(_pre_font)
+
+import qtawesome as qta
+from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QFrame, QFileDialog, QGraphicsDropShadowEffect,
                              QLabel, QPushButton)
 from PyQt6.QtCore import Qt, QTimer, QSize
-from PyQt6.QtGui import QColor, QFont
+from PyQt6.QtGui import QColor
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
+
 
 # ── Path Setup ──────────────────────────────────────────────────────────────
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -373,14 +383,12 @@ class NexusStudio(QMainWindow):
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-if __name__ == "__main__":
-    # QApplication must exist BEFORE any qtawesome icons are created.
-    _app = QApplication(sys.argv)
-    _font = QFont("Segoe UI", 10)
-    _app.setFont(_font)
 
-    # Now safe to instantiate the main window (triggers all icon creation)
+if __name__ == "__main__":
+    # Grab the QApplication created at module level (above)
+    _app = QApplication.instance()
     window = NexusStudio()
     window.show()
     sys.exit(_app.exec())
+
 
