@@ -372,10 +372,15 @@ class NexusStudio(QMainWindow):
 # Entry Point
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    font = QFont("Segoe UI", 10)
-    app.setFont(font)
+    # QApplication must exist BEFORE any qtawesome icons are created.
+    _app = QApplication(sys.argv)
+    _font = QFont("Segoe UI", 10)
+    _app.setFont(_font)
+
+    # Now safe to instantiate the main window (triggers all icon creation)
     window = NexusStudio()
     window.show()
-    sys.exit(app.exec())
+    sys.exit(_app.exec())
+
