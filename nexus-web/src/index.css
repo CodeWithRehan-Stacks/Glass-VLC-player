@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap');
+
+:root {
+  --bg-dark: #05050A;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --accent-cyan: #00E5FF;
+  --accent-purple: #8A2BE2;
+  --accent-pink: #FF007F;
+  --text-main: #E2E8F0;
+  --text-dim: #718096;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --neon-glow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: var(--neon-glow);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.pulse {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+.logo-subtext {
+  font-size: 10px;
+  font-weight: 700;
+  color: #00E5FF;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #718096;
+}
+
+.sidebar-item:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-item.active {
+  background: linear-gradient(90deg, rgba(138, 43, 226, 0.3), rgba(0, 229, 255, 0.2));
+  border-left: 3px solid #00E5FF;
+  color: white;
+}
+
+.sidebar-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* TopBar Styling */
+.top-bar {
+  height: 80px;
+  margin-left: 280px;
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 90;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 30px;
+  width: 400px;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-icon {
+  color: #718096;
+}
+
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #718096;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  color: white;
+  background: rgba(0, 229, 255, 0.2);
+  border-color: #00E5FF;
+}
+
+.user-profile {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #8A2BE2, #00E5FF);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+/* View Styling */
+.view-container {
+  margin-left: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.hero-banner {
+  height: 300px;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.4), rgba(0, 229, 255, 0.2)), url('https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&q=80&w=2070') center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+}
+
+.primary-btn {
+  background: #00E5FF;
+  color: #05050A;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  border-left: 4px solid #00E5FF;
+  padding-left: 16px;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.quick-action-card {
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-action-label {
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recent-card {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+}
+
+.recent-thumb {
+  width: 120px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.recent-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.recent-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.recent-meta {
+  font-size: 12px;
+  color: #718096;
+}
+
+/* App Shell */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
