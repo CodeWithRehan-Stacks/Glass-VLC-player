@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════════════════════════
+   NEXUS STUDIO — PREMIUM CINEMATIC QSS DESIGN SYSTEM
+   Version 3.0 — Complete UI Overhaul
+════════════════════════════════════════════════════════════ */
+
+/* ─── Global Reset ─── */
+* { box-sizing: border-box; }
+
+QMainWindow, QWidget {
+    background-color: #07070F;
+    color: #E2E8F0;
+    font-family: "Segoe UI", "SF Pro Display", "Inter", sans-serif;
+    font-size: 13px;
+}
+
+/* ─── Main Container ─── */
+#MainContainer {
+    background-color: #07070F;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 229, 255, 25);
+}
+
+/* ─── Custom Title Bar ─── */
+#TitleBar {
+    background-color: rgba(7, 7, 15, 240);
+    border-bottom: 1px solid rgba(255, 255, 255, 8);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+#TitleBtn {
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+}
+#TitleBtn:hover { background-color: rgba(255, 255, 255, 15); }
+
+/* ─── Top Bar ─── */
+#TopBar {
+    background: rgba(10, 10, 20, 200);
+    border-bottom: 1px solid rgba(255, 255, 255, 8);
+}
+#SearchFrame {
+    background: rgba(255, 255, 255, 7);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 12);
+}
+#SearchFrame:focus-within {
+    border: 1px solid rgba(0, 229, 255, 60);
+    background: rgba(0, 229, 255, 8);
+}
+#SearchInput {
+    background: transparent;
+    border: none;
+    color: #E2E8F0;
+    font-size: 13px;
+    padding: 6px 0;
+}
+#SearchInput::placeholder { color: #4A5568; }
+#TopBarBtn {
+    background: rgba(255, 255, 255, 6);
+    border: 1px solid rgba(255, 255, 255, 10);
+    border-radius: 20px;
+    padding: 4px;
+}
+#TopBarBtn:hover {
+    background: rgba(0, 229, 255, 20);
+    border-color: rgba(0, 229, 255, 50);
+}
+
+/* ─── Sidebar ─── */
+#Sidebar {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 rgba(5, 5, 15, 240),
+        stop:1 rgba(8, 8, 20, 200));
+    border-right: 1px solid rgba(0, 229, 255, 20);
+    border-bottom-left-radius: 16px;
+}
+
+#SidebarItem {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: #718096;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 8px;
+    text-align: left;
+}
+#SidebarItem:hover {
+    background: rgba(0, 229, 255, 12);
+    color: #CBD5E0;
+}
+#SidebarItem:checked {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 rgba(138, 43, 226, 80),
+        stop:1 rgba(0, 229, 255, 50));
+    color: #FFFFFF;
+    border-left: 3px solid #00E5FF;
+}
+
+/* ─── Dashboard View ─── */
+#DashboardView { background: transparent; }
+
+#HeroButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #8A2BE2, stop:1 #00E5FF);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+#HeroButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #A142F4, stop:1 #33EEFF);
+}
+
+#GlassCard, #RecentItem {
+    background: rgba(255, 255, 255, 4);
+    border: 1px solid rgba(255, 255, 255, 10);
+    border-radius: 16px;
+}
+#GlassCard:hover, #RecentItem:hover {
+    background: rgba(0, 229, 255, 8);
+    border: 1px solid rgba(0, 229, 255, 40);
+}
+
+#StatusCard {
+    background: rgba(255, 255, 255, 4);
+    border: 1px solid rgba(255, 255, 255, 8);
+    border-radius: 14px;
+}
+#StatusCard:hover {
+    background: rgba(255, 255, 255, 7);
+    border: 1px solid rgba(0, 229, 255, 30);
+}
+
+/* ─── Mixer Panel ─── */
+#MixerPanel {
+    background: rgba(15, 15, 25, 200);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 10);
+}
+
+/* ─── Radio Panel ─── */
+#RadioPanel {
+    background: rgba(15, 15, 25, 200);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 10);
+}
+
+/* ─── Sliders ─── */
+QSlider::groove:vertical {
+    border-radius: 3px; width: 6px;
+    background: rgba(255, 255, 255, 10); margin: 0px;
+}
+QSlider::handle:vertical {
+    background: #00E5FF; height: 14px; width: 14px;
+    margin: 0 -4px; border-radius: 7px;
+    border: 2px solid rgba(0, 229, 255, 150);
+}
+QSlider::add-page:vertical {
+    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #00E5FF,stop:1 #8A2BE2);
+    border-radius: 3px;
+}
+
+/* ─── Cinematic Seekbar ─── */
+#CinematicSeekbar::groove:horizontal {
+    border-radius: 2px; height: 4px;
+    background: rgba(255, 255, 255, 20); margin: 0px;
+}
+#CinematicSeekbar:hover::groove:horizontal { height: 6px; }
+#CinematicSeekbar::handle:horizontal {
+    background: #00E5FF; width: 0px; height: 0px; margin: 0px;
+}
+#CinematicSeekbar:hover::handle:horizontal {
+    width: 14px; height: 14px; margin: -4px 0; border-radius: 7px;
+}
+#CinematicSeekbar::sub-page:horizontal {
+    background: qlineargradient(x1:0,y1:0,x2:1,y2:0,stop:0 #8A2BE2,stop:1 #00E5FF);
+    border-radius: 2px;
+}
+
+/* ─── Control Bar Buttons ─── */
+#ControlBtn {
+    background: transparent;
+    color: #E2E8F0; font-size: 15px;
+    padding: 8px; border-radius: 20px;
+    min-width: 24px; min-height: 24px;
+    border: none;
+}
+#ControlBtn:hover {
+    background: rgba(255, 255, 255, 20);
+}
+
+/* ─── Floating Controls ─── */
+#FloatingControls {
+    background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+        stop:0 rgba(0,0,0,0), stop:0.3 rgba(0,0,0,120), stop:1 rgba(0,0,0,220));
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* ─── Volume Slider ─── */
+#VolumeSlider::groove:horizontal {
+    height: 4px; background: rgba(255,255,255,25); border-radius: 2px;
+}
+#VolumeSlider::sub-page:horizontal {
+    background: #FFFFFF; border-radius: 2px;
+}
+#VolumeSlider::handle:horizontal {
+    background: #FFFFFF; width: 12px; height: 12px;
+    margin: -4px 0; border-radius: 6px;
+}
+
+/* ─── Time Labels ─── */
+#TimeLabel {
+    color: #EEEEEE; font-size: 12px;
+    font-family: "Consolas", monospace; font-weight: 500;
+}
+
+/* ─── Title Bar Buttons ─── */
+#TitleBar {
+    background-color: rgba(5, 5, 12, 250);
+    border-bottom: 1px solid rgba(255, 255, 255, 8);
+}
+
+/* ─── Scrollbars ─── */
+QScrollBar:vertical {
+    background: transparent; width: 6px;
+}
+QScrollBar::handle:vertical {
+    background: rgba(255,255,255,25); border-radius: 3px; min-height: 30px;
+}
+QScrollBar::handle:vertical:hover { background: rgba(0, 229, 255, 60); }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0px; }
+
+QScrollBar:horizontal {
+    background: transparent; height: 6px;
+}
+QScrollBar::handle:horizontal {
+    background: rgba(255,255,255,25); border-radius: 3px; min-width: 30px;
+}
+QScrollBar::handle:horizontal:hover { background: rgba(0, 229, 255, 60); }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0px; }
+
+/* ─── Tooltips ─── */
+QToolTip {
+    background: #1A1A2E;
+    color: #E2E8F0;
+    border: 1px solid rgba(0, 229, 255, 40);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+}

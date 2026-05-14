@@ -1,0 +1,111 @@
+/* Ultra Premium Cinematic Theme */
+QMainWindow {
+    background-color: #0A0A0A;
+}
+
+QWidget {
+    color: #FFFFFF;
+    font-family: "Segoe UI", "SF Pro Display", "Inter", sans-serif;
+}
+
+/* Custom Title Bar */
+#TitleBar {
+    background: transparent;
+    min-height: 45px;
+}
+#TitleLabel {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Controls Panel */
+#ControlsPanel {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(10,10,10,0), stop:1 rgba(10,10,10,240));
+    border-radius: 15px;
+    margin: 10px;
+}
+
+/* Sliders */
+QSlider::groove:horizontal {
+    border-radius: 2px;
+    height: 4px;
+    background: rgba(255, 255, 255, 30);
+    margin: 0px;
+}
+QSlider::handle:horizontal {
+    background: #00E5FF;
+    width: 14px;
+    height: 14px;
+    margin: -5px 0;
+    border-radius: 7px;
+    /* Glow effect simulation */
+    border: 2px solid rgba(0, 229, 255, 100);
+}
+QSlider::sub-page:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #8A2BE2, stop:1 #00E5FF);
+    border-radius: 2px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 16px;
+    color: #E0E0E0;
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 20);
+    color: #00E5FF;
+}
+QPushButton:pressed {
+    background-color: rgba(0, 229, 255, 40);
+}
+#PrimaryButton {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #8A2BE2, stop:1 #00E5FF);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+#PrimaryButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #9b4dff, stop:1 #33eeff);
+}
+
+/* Sidebar / Lists */
+QListWidget {
+    background: rgba(18, 18, 18, 200);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+QListWidget::item {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+QListWidget::item:hover {
+    background: rgba(255, 255, 255, 10);
+}
+QListWidget::item:selected {
+    background: rgba(138, 43, 226, 60);
+    color: #00E5FF;
+    border-left: 3px solid #00E5FF;
+}
+
+/* Labels */
+#TimeLabel {
+    color: #AAAAAA;
+    font-family: "Consolas", monospace;
+    font-size: 12px;
+}
+
+#HeaderLabel {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
